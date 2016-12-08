@@ -147,7 +147,8 @@ class View(Gtk.Window):
 	def _push_message(self, author, message):
 		message_time = datetime.strftime(datetime.now(), "%H:%M:%S")
 		message_fmt = "{0} ({1}):\n{2}\n\n".format(author, message_time, message)
-		self._messages_view_buf.insert_at_cursor(message_fmt)
+		end_iter = self._messages_view_buf.get_end_iter()
+		self._messages_view_buf.insert(end_iter, message_fmt)
 
 	def _push_own_message(self, message):
 		self._push_message("You", message)
@@ -188,6 +189,9 @@ class View(Gtk.Window):
 
 	def push_statusbar_message(self, message):
 		self._statusbar.set_label(message)
+
+	def clear_messages_window(self):
+		self._messages_view_buf.set_text("")
 
 	def lock(self, method, *args):
 		Gdk.threads_enter()

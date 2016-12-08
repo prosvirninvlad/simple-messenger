@@ -10,6 +10,7 @@ class Controller:
 
 	def process_conn_response(self, response):
 		if response.resl == Response.OKAY:
+			self._view.lock(self._view.clear_messages_window)
 			self._view.lock(self._view.enable_connected_mode)
 		else:
 			message_fmt = "Error: Unable to find companion.\n({0})"
