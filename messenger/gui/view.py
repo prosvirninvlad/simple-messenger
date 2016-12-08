@@ -43,8 +43,10 @@ class View(Gtk.Window):
 	def _make_messages_view(self):
 		self._messages_view = Gtk.TextView()
 		self._messages_view_buf = self._messages_view.get_buffer()
-		messages_view = make_scrollable(self._messages_view)
-		messages_view = place_in_frame(messages_view)
+		self._messages_view.connect("size-allocate", self._messages_view_changed)
+
+		self._messages_scroll = make_scrollable(self._messages_view)
+		messages_view = place_in_frame(self._messages_scroll)
 		self._main_container.pack_start(messages_view, True, True, 0)
 
 		self._messages_view.set_wrap_mode(Gtk.WrapMode.WORD)
@@ -113,6 +115,10 @@ class View(Gtk.Window):
 		self._statusbar = Gtk.Label("Ready")
 		self._statusbar.set_halign(Gtk.Align.START)
 		self._main_container.pack_end(self._statusbar, False, True, 0)
+
+	def _messages_view_changed(self, *args):
+		scroll = self._messages_scroll.get_vadjustment()
+		scroll.set_value(scroll.get_upper() - scroll.get_page_size())
 
 	def _send_clicked(self, sender):
 		message = self._message_entry.get_text()
