@@ -104,6 +104,8 @@ def process_command(companion):
 		Command.DSCN: process_dscn_command,
 		Command.SEND: process_send_command,
 		Command.ECHO: process_echo_command,
+		Command.TYBE: process_tybe_command,
+		Command.TYEN: process_tyen_command,
 		Command.UNKN: process_unkn_command
 	}.get(command.iden, process_unkn_command)
 	command_processor(companion, command)
@@ -132,6 +134,14 @@ def process_send_command(companion, command):
 def process_echo_command(companion, command):
 	response = Response(Command.ECHO, mesg = command.mesg)
 	companion.send_response(response)
+
+def process_tybe_command(companion, command):
+	response = Response(Command.TYBE)
+	companion.companion.send_response(response)
+
+def process_tyen_command(companion, command):
+	response = Response(Command.TYEN)
+	companion.companion.send_response(response)
 
 def process_unkn_command(companion, command):
 	response_message = b"ERROR_UNKNOWN_COMMAND"

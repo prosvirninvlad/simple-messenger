@@ -30,6 +30,13 @@ class Controller:
 		else:
 			self._view.lock(self._view.run_message_dialog, message)
 
+	def process_tybe_response(self, response):
+		message = "Companion is typing message..."
+		self._view.lock(self._view.push_statusbar_message, message)
+
+	def process_tyen_response(self, response):
+		self._view.lock(self._view.enable_connected_mode)
+
 	def connect(self, addr, port):
 		try:
 			self._view.enable_connecting_mode()
@@ -47,6 +54,9 @@ class Controller:
 
 	def send_message(self, message):
 		self._client.send_message(message)
+
+	def send_message_writing_begin(self):
+		self._client.send_message_writing_begin()
 	
 	def run(self):
 		self._view.run_view()

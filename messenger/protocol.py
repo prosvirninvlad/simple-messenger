@@ -8,8 +8,8 @@ class Command:
 	SEND = "SEND"
 	MESG = "MESG"
 	SECR = "SECR"
-	WRBE = "WRBE"
-	WREN = "WREN"
+	TYBE = "TYBE"
+	TYEN = "TYEN"
 
 	HEAD_SIZE = 3
 	IDEN_SIZE = 4

@@ -1,0 +1,214 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ACCEPT_TIMEOUT	messenger/backend/server.py	/^	ACCEPT_TIMEOUT = 8$/;"	kind:variable	line:13
+ACCEPT_TIMEOUT	messenger/frontend/client.py	/^	ACCEPT_TIMEOUT = 8$/;"	kind:variable	line:12
+CONN	messenger/protocol.py	/^	CONN = "CONN"$/;"	kind:variable	line:7
+Client	messenger/frontend/client.py	/^class Client:$/;"	kind:class	line:9
+Client	messenger/gui/controller.py	/^from messenger.frontend.client import Client$/;"	kind:namespace	line:3
+ClientAlreadyConnected	messenger/frontend/exceptions.py	/^class ClientAlreadyConnected(Exception): pass$/;"	kind:class	line:2
+ClientAlreadyDisconnected	messenger/frontend/exceptions.py	/^class ClientAlreadyDisconnected(Exception): pass$/;"	kind:class	line:3
+Command	messenger/backend/companion.py	/^from messenger.protocol import Command$/;"	kind:namespace	line:3
+Command	messenger/backend/server.py	/^from messenger.protocol import Command$/;"	kind:namespace	line:5
+Command	messenger/frontend/client.py	/^from messenger.protocol import Command$/;"	kind:namespace	line:5
+Command	messenger/protocol.py	/^class Command:$/;"	kind:class	line:3
+Command	messenger/protocol_tests.py	/^from protocol import Command$/;"	kind:namespace	line:5
+CommandInstanceTests	messenger/protocol_tests.py	/^class CommandInstanceTests(unittest.TestCase):$/;"	kind:class	line:84
+CommandUnpackSignTests	messenger/protocol_tests.py	/^class CommandUnpackSignTests(unittest.TestCase):$/;"	kind:class	line:8
+Companion	messenger/backend/companion.py	/^class Companion:$/;"	kind:class	line:7
+Companion	messenger/backend/server.py	/^from messenger.backend.companion import Companion$/;"	kind:namespace	line:7
+CompanionDisconnected	messenger/backend/exceptions.py	/^class CompanionDisconnected(ServerException): pass/;"	kind:class	line:6
+Controller	gui.py	/^from messenger.gui.controller import Controller$/;"	kind:namespace	line:3
+Controller	messenger/gui/controller.py	/^class Controller:$/;"	kind:class	line:6
+DEFAULT_ADDRESS	messenger/backend/server.py	/^	DEFAULT_ADDRESS = "127.0.0.1"$/;"	kind:variable	line:12
+DEFAULT_ADDRESS	messenger/frontend/client.py	/^	DEFAULT_ADDRESS = "127.0.0.1"$/;"	kind:variable	line:11
+DEFAULT_PORT	messenger/backend/server.py	/^	DEFAULT_PORT = 3848$/;"	kind:variable	line:11
+DEFAULT_PORT	messenger/frontend/client.py	/^	DEFAULT_PORT = 3848$/;"	kind:variable	line:10
+DSCN	messenger/protocol.py	/^	DSCN = "DSCN"$/;"	kind:variable	line:4
+ECHO	messenger/protocol.py	/^	ECHO = "ECHO"$/;"	kind:variable	line:5
+FAIL	messenger/protocol.py	/^	FAIL = "FAIL"$/;"	kind:variable	line:73
+Gdk	messenger/gui/view.py	/^from gi.repository import Gdk$/;"	kind:namespace	line:5
+Gtk	messenger/gui/view.py	/^from gi.repository import Gtk$/;"	kind:namespace	line:4
+HEAD_SIZE	messenger/protocol.py	/^	HEAD_SIZE = 3$/;"	kind:variable	line:14
+HEAD_SIZE	messenger/protocol.py	/^	HEAD_SIZE = 3$/;"	kind:variable	line:75
+IDEN_SIZE	messenger/protocol.py	/^	IDEN_SIZE = 4$/;"	kind:variable	line:15
+IDEN_SIZE	messenger/protocol.py	/^	IDEN_SIZE = 4$/;"	kind:variable	line:76
+InvalidServerAddress	messenger/frontend/exceptions.py	/^class InvalidServerAddress(Exception): pass$/;"	kind:class	line:4
+MAX_CLIENTS	messenger/backend/server.py	/^	MAX_CLIENTS = 32$/;"	kind:variable	line:14
+MESG	messenger/protocol.py	/^	MESG = "MESG"$/;"	kind:variable	line:9
+MESG_SIZE	messenger/protocol.py	/^	MESG_SIZE = 0xFFF$/;"	kind:variable	line:16
+MESG_SIZE	messenger/protocol.py	/^	MESG_SIZE = 0xFFF$/;"	kind:variable	line:78
+OKAY	messenger/protocol.py	/^	OKAY = "OKAY"$/;"	kind:variable	line:72
+Pango	messenger/gui/view.py	/^from gi.repository import Pango$/;"	kind:namespace	line:6
+RESL_SIZE	messenger/protocol.py	/^	RESL_SIZE = 4$/;"	kind:variable	line:77
+Response	messenger/backend/companion.py	/^from messenger.protocol import Response$/;"	kind:namespace	line:4
+Response	messenger/backend/server.py	/^from messenger.protocol import Response$/;"	kind:namespace	line:6
+Response	messenger/frontend/client.py	/^from messenger.protocol import Response$/;"	kind:namespace	line:6
+Response	messenger/gui/controller.py	/^from messenger.protocol import Response$/;"	kind:namespace	line:2
+Response	messenger/protocol.py	/^class Response(Command):$/;"	kind:class	line:71
+Response	messenger/protocol_tests.py	/^from protocol import Response$/;"	kind:namespace	line:6
+ResponseInstanceTests	messenger/protocol_tests.py	/^class ResponseInstanceTests(unittest.TestCase):$/;"	kind:class	line:104
+ResponseUnpackTests	messenger/protocol_tests.py	/^class ResponseUnpackTests(unittest.TestCase):$/;"	kind:class	line:39
+SECR	messenger/protocol.py	/^	SECR = "SECR"$/;"	kind:variable	line:10
+SEND	messenger/protocol.py	/^	SEND = "SEND"$/;"	kind:variable	line:8
+SIGN_SIZE	messenger/protocol.py	/^	SIGN_SIZE = sum(($/;"	kind:variable	line:17
+SIGN_SIZE	messenger/protocol.py	/^	SIGN_SIZE = sum(($/;"	kind:variable	line:79
+Server	messenger/backend/server.py	/^class Server:$/;"	kind:class	line:10
+Server	server.py	/^from messenger.backend.server import Server$/;"	kind:namespace	line:3
+ServerAlreadyRunning	messenger/backend/exceptions.py	/^class ServerAlreadyRunning(ServerException): pass$/;"	kind:class	line:2
+ServerAlreadyStopped	messenger/backend/exceptions.py	/^class ServerAlreadyStopped(ServerException): pass$/;"	kind:class	line:3
+ServerDisconnected	messenger/frontend/exceptions.py	/^class ServerDisconnected(Exception): pass$/;"	kind:class	line:5
+ServerException	messenger/backend/exceptions.py	/^class ServerException(Exception): pass$/;"	kind:class	line:1
+ServerInvalidConfiguration	messenger/backend/exceptions.py	/^class ServerInvalidConfiguration(ServerException): pass$/;"	kind:class	line:4
+SessionAlreadyStopped	messenger/frontend/exceptions.py	/^class SessionAlreadyStopped(Exception): pass/;"	kind:class	line:7
+SessionRunning	messenger/frontend/exceptions.py	/^class SessionRunning(Exception): pass$/;"	kind:class	line:6
+SuspendConnection	messenger/frontend/exceptions.py	/^class SuspendConnection(Exception): pass$/;"	kind:class	line:1
+SuspendSession	messenger/backend/exceptions.py	/^class SuspendSession(ServerException): pass$/;"	kind:class	line:5
+Thread	messenger/backend/server.py	/^from threading import Thread$/;"	kind:namespace	line:3
+Thread	messenger/frontend/client.py	/^from threading import Thread$/;"	kind:namespace	line:3
+UNKN	messenger/protocol.py	/^	UNKN = "UNKN"$/;"	kind:variable	line:6
+View	messenger/gui/controller.py	/^from messenger.gui.view import View$/;"	kind:namespace	line:1
+View	messenger/gui/view.py	/^class View(Gtk.Window):$/;"	kind:class	line:9
+WRBE	messenger/protocol.py	/^	WRBE = "WRBE"$/;"	kind:variable	line:11
+WREN	messenger/protocol.py	/^	WREN = "WREN"$/;"	kind:variable	line:12
+__del__	messenger/backend/companion.py	/^	def __del__(self):$/;"	kind:member	line:23
+__init__	messenger/backend/companion.py	/^	def __init__(self, sock, companion = None):$/;"	kind:member	line:19
+__init__	messenger/backend/server.py	/^	def __init__(self):$/;"	kind:member	line:16
+__init__	messenger/frontend/client.py	/^	def __init__(self, controller):$/;"	kind:member	line:14
+__init__	messenger/gui/controller.py	/^	def __init__(self):$/;"	kind:member	line:7
+__init__	messenger/gui/view.py	/^	def __init__(self, controller):$/;"	kind:member	line:10
+__init__	messenger/protocol.py	/^	def __init__(self, iden, mesg = b"", mesg_len = 0):$/;"	kind:member	line:43
+__init__	messenger/protocol.py	/^	def __init__(self, iden, resl = OKAY, mesg = b"", mesg_len = None):$/;"	kind:member	line:103
+_begin_session	messenger/backend/server.py	/^	def _begin_session(self, companion_a, companion_b):$/;"	kind:member	line:75
+_change_connection_clicked	messenger/gui/view.py	/^	def _change_connection_clicked(self, sender):$/;"	kind:member	line:125
+_configure	messenger/backend/server.py	/^	def _configure(self, addr, port):$/;"	kind:member	line:49
+_connection_config_clicked	messenger/gui/view.py	/^	def _connection_config_clicked(self, sender):$/;"	kind:member	line:133
+_ignore_response	messenger/frontend/client.py	/^	def _ignore_response(self, response):$/;"	kind:member	line:113
+_init_childs	messenger/gui/view.py	/^	def _init_childs(self):$/;"	kind:member	line:27
+_loop	messenger/backend/server.py	/^	def _loop(self):$/;"	kind:member	line:58
+_make_connection_config_menu	messenger/gui/view.py	/^	def _make_connection_config_menu(self):$/;"	kind:member	line:84
+_make_connection_controls	messenger/gui/view.py	/^	def _make_connection_controls(self):$/;"	kind:member	line:67
+_make_controls_container	messenger/gui/view.py	/^	def _make_controls_container(self):$/;"	kind:member	line:54
+_make_main_container	messenger/gui/view.py	/^	def _make_main_container(self):$/;"	kind:member	line:36
+_make_message_entry	messenger/gui/view.py	/^	def _make_message_entry(self):$/;"	kind:member	line:61
+_make_messages_view	messenger/gui/view.py	/^	def _make_messages_view(self):$/;"	kind:member	line:43
+_make_statusbar	messenger/gui/view.py	/^	def _make_statusbar(self):$/;"	kind:member	line:107
+_process_conn_response	messenger/frontend/client.py	/^	def _process_conn_response(self, response):$/;"	kind:member	line:98
+_process_dscn_response	messenger/frontend/client.py	/^	def _process_dscn_response(self, response):$/;"	kind:member	line:103
+_process_mesg_response	messenger/frontend/client.py	/^	def _process_mesg_response(self, response):$/;"	kind:member	line:107
+_process_response	messenger/frontend/client.py	/^	def _process_response(self):$/;"	kind:member	line:83
+_process_unkn_response	messenger/frontend/client.py	/^	def _process_unkn_response(self, response):$/;"	kind:member	line:110
+_push_message	messenger/gui/view.py	/^	def _push_message(self, message):$/;"	kind:member	line:136
+_push_own_message	messenger/gui/view.py	/^	def _push_own_message(self, message):$/;"	kind:member	line:139
+_receive_response	messenger/frontend/client.py	/^	def _receive_response(self):$/;"	kind:member	line:72
+_recv	messenger/backend/companion.py	/^	def _recv(self, recv_len):$/;"	kind:member	line:26
+_recv	messenger/frontend/client.py	/^	def _recv(self, recv_len):$/;"	kind:member	line:54
+_send	messenger/backend/companion.py	/^	def _send(self, buf):$/;"	kind:member	line:35
+_send	messenger/frontend/client.py	/^	def _send(self, buf):$/;"	kind:member	line:63
+_send_clicked	messenger/gui/view.py	/^	def _send_clicked(self, sender):$/;"	kind:member	line:116
+_send_command	messenger/frontend/client.py	/^	def _send_command(self, command):$/;"	kind:member	line:69
+_session_loop	messenger/backend/server.py	/^	def _session_loop(self, companion_a, companion_b):$/;"	kind:member	line:86
+_session_loop	messenger/frontend/client.py	/^	def _session_loop(self):$/;"	kind:member	line:45
+begin_session	messenger/frontend/client.py	/^	def begin_session(self):$/;"	kind:member	line:32
+change_margins	messenger/gui/view.py	/^def change_margins(widget, margin):$/;"	kind:function	line:186
+client.py	messenger/frontend/client.py	1;"	kind:file	line:1
+close	messenger/backend/companion.py	/^	def close(self):$/;"	kind:member	line:41
+companion	messenger/backend/companion.py	/^	def companion(self):$/;"	kind:member	line:59
+companion	messenger/backend/companion.py	/^	def companion(self, value):$/;"	kind:member	line:63
+companion.py	messenger/backend/companion.py	1;"	kind:file	line:1
+connect	messenger/frontend/client.py	/^	def connect(self, addr = DEFAULT_ADDRESS, port = DEFAULT_PORT):$/;"	kind:member	line:20
+connect	messenger/gui/controller.py	/^	def connect(self, addr, port):$/;"	kind:member	line:33
+controller.py	messenger/gui/controller.py	1;"	kind:file	line:1
+datetime	messenger/gui/view.py	/^from datetime import datetime$/;"	kind:namespace	line:7
+disconnect	messenger/frontend/client.py	/^	def disconnect(self):$/;"	kind:member	line:29
+echo	messenger/frontend/client.py	/^	def echo(self, message):$/;"	kind:member	line:116
+echo	messenger/gui/controller.py	/^	def echo(self, message):$/;"	kind:member	line:45
+enable_connected_mode	messenger/gui/view.py	/^	def enable_connected_mode(self):$/;"	kind:member	line:155
+enable_connecting_mode	messenger/gui/view.py	/^	def enable_connecting_mode(self):$/;"	kind:member	line:171
+enable_disconnected_mode	messenger/gui/view.py	/^	def enable_disconnected_mode(self):$/;"	kind:member	line:163
+end_session	messenger/frontend/client.py	/^	def end_session(self):$/;"	kind:member	line:39
+exceptions.py	messenger/backend/exceptions.py	1;"	kind:file	line:1
+exceptions.py	messenger/frontend/exceptions.py	1;"	kind:file	line:1
+gi	messenger/gui/view.py	/^import gi$/;"	kind:namespace	line:1
+gui.py	gui.py	1;"	kind:file	line:1
+iden	messenger/protocol.py	/^	def iden(self):$/;"	kind:member	line:49
+in_raw	messenger/protocol.py	/^	def in_raw(self):$/;"	kind:member	line:111
+in_raw	messenger/protocol.py	/^	def in_raw(self):$/;"	kind:member	line:64
+is_running	messenger/backend/server.py	/^	def is_running(self):$/;"	kind:member	line:46
+lock	messenger/gui/view.py	/^	def lock(self, method, *args):$/;"	kind:member	line:181
+main	gui.py	/^def main():$/;"	kind:function	line:5
+main	server.py	/^def main():$/;"	kind:function	line:6
+make_scrollable	messenger/gui/view.py	/^def make_scrollable(widget):$/;"	kind:function	line:197
+mesg	messenger/protocol.py	/^	def mesg(self):$/;"	kind:member	line:53
+mesg	messenger/protocol.py	/^	def mesg(self, mesg):$/;"	kind:member	line:61
+mesg_len	messenger/protocol.py	/^	def mesg_len(self):$/;"	kind:member	line:57
+place_in_frame	messenger/gui/view.py	/^def place_in_frame(widget):$/;"	kind:function	line:192
+process_command	messenger/backend/server.py	/^def process_command(companion):$/;"	kind:function	line:97
+process_conn_command	messenger/backend/server.py	/^def process_conn_command(companion):$/;"	kind:function	line:111
+process_conn_response	messenger/gui/controller.py	/^	def process_conn_response(self, response):$/;"	kind:member	line:11
+process_dscn_command	messenger/backend/server.py	/^def process_dscn_command(companion, command):$/;"	kind:function	line:121
+process_dscn_response	messenger/gui/controller.py	/^	def process_dscn_response(self, response):$/;"	kind:member	line:20
+process_echo_command	messenger/backend/server.py	/^def process_echo_command(companion, command):$/;"	kind:function	line:132
+process_mesg_response	messenger/gui/controller.py	/^	def process_mesg_response(self, response):$/;"	kind:member	line:26
+process_send_command	messenger/backend/server.py	/^def process_send_command(companion, command):$/;"	kind:function	line:126
+process_unkn_command	messenger/backend/server.py	/^def process_unkn_command(companion, command):$/;"	kind:function	line:136
+protocol.py	messenger/protocol.py	1;"	kind:file	line:1
+protocol_tests.py	messenger/protocol_tests.py	1;"	kind:file	line:1
+push_new_message	messenger/gui/view.py	/^	def push_new_message(self, message):$/;"	kind:member	line:151
+push_statusbar_message	messenger/gui/view.py	/^	def push_statusbar_message(self, message):$/;"	kind:member	line:178
+re	messenger/protocol.py	/^import re$/;"	kind:namespace	line:1
+receive_command	messenger/backend/companion.py	/^	def receive_command(self):$/;"	kind:member	line:47
+regex	messenger/protocol.py	/^	regex = re.compile(regex_raw)$/;"	kind:variable	line:26
+regex	messenger/protocol.py	/^	regex = re.compile(regex_raw)$/;"	kind:variable	line:86
+regex_raw	messenger/protocol.py	/^	regex_raw = Command.regex_raw + r"({0}|{1})".format(OKAY, FAIL)$/;"	kind:variable	line:85
+regex_raw	messenger/protocol.py	/^	regex_raw = r"([\\da-fA-F]{%d})([a-zA-Z]{%d})" % ($/;"	kind:variable	line:22
+resl	messenger/protocol.py	/^	def resl(self):$/;"	kind:member	line:108
+run	messenger/backend/server.py	/^	def run(self, addr = DEFAULT_ADDRESS, port = DEFAULT_PORT):$/;"	kind:member	line:22
+run	messenger/gui/controller.py	/^	def run(self):$/;"	kind:member	line:51
+run_message_dialog	messenger/gui/view.py	/^	def run_message_dialog(self, message):$/;"	kind:member	line:143
+run_view	messenger/gui/view.py	/^	def run_view(self):$/;"	kind:member	line:21
+secure.py	messenger/frontend/secure.py	1;"	kind:file	line:1
+select	messenger/backend/companion.py	/^from select import select$/;"	kind:namespace	line:1
+select	messenger/backend/server.py	/^from select import select$/;"	kind:namespace	line:2
+select	messenger/frontend/client.py	/^from select import select$/;"	kind:namespace	line:2
+select_recv	messenger/backend/companion.py	/^	def select_recv(*companions, timeout):$/;"	kind:member	line:9
+select_recv	messenger/backend/server.py	/^def select_recv(*sock_list, timeout):$/;"	kind:function	line:149
+select_recv	messenger/frontend/client.py	/^def select_recv(*sock_list, timeout):$/;"	kind:function	line:128
+send_message	messenger/frontend/client.py	/^	def send_message(self, message):$/;"	kind:member	line:120
+send_message	messenger/gui/controller.py	/^	def send_message(self, message):$/;"	kind:member	line:48
+send_response	messenger/backend/companion.py	/^	def send_response(self, response):$/;"	kind:member	line:44
+server.py	messenger/backend/server.py	1;"	kind:file	line:1
+server.py	server.py	1;"	kind:file	line:1
+socket	messenger/backend/server.py	/^from socket import socket$/;"	kind:namespace	line:1
+socket	messenger/frontend/client.py	/^from socket import socket$/;"	kind:namespace	line:1
+stop	messenger/backend/server.py	/^	def stop(self):$/;"	kind:member	line:31
+suspend_session	messenger/backend/server.py	/^def suspend_session(companion):$/;"	kind:function	line:141
+suspend_session	messenger/frontend/client.py	/^	def suspend_session(self):$/;"	kind:member	line:124
+test_empty_sign	messenger/protocol_tests.py	/^	def test_empty_sign(self):$/;"	kind:member	line:9
+test_with_blank_mesg	messenger/protocol_tests.py	/^	def test_with_blank_mesg(self):$/;"	kind:member	line:105
+test_with_blank_mesg	messenger/protocol_tests.py	/^	def test_with_blank_mesg(self):$/;"	kind:member	line:85
+test_with_correct_sign_a	messenger/protocol_tests.py	/^	def test_with_correct_sign_a(self):$/;"	kind:member	line:29
+test_with_correct_sign_a	messenger/protocol_tests.py	/^	def test_with_correct_sign_a(self):$/;"	kind:member	line:64
+test_with_correct_sign_b	messenger/protocol_tests.py	/^	def test_with_correct_sign_b(self):$/;"	kind:member	line:34
+test_with_correct_sign_b	messenger/protocol_tests.py	/^	def test_with_correct_sign_b(self):$/;"	kind:member	line:74
+test_with_empty_sign	messenger/protocol_tests.py	/^	def test_with_empty_sign(self):$/;"	kind:member	line:40
+test_with_norm_mesg	messenger/protocol_tests.py	/^	def test_with_norm_mesg(self):$/;"	kind:member	line:116
+test_with_norm_mesg	messenger/protocol_tests.py	/^	def test_with_norm_mesg(self):$/;"	kind:member	line:96
+test_with_very_long_mesg	messenger/protocol_tests.py	/^	def test_with_very_long_mesg(self):$/;"	kind:member	line:110
+test_with_very_long_mesg	messenger/protocol_tests.py	/^	def test_with_very_long_mesg(self):$/;"	kind:member	line:90
+test_with_wrong_head_data	messenger/protocol_tests.py	/^	def test_with_wrong_head_data(self):$/;"	kind:member	line:17
+test_with_wrong_head_data	messenger/protocol_tests.py	/^	def test_with_wrong_head_data(self):$/;"	kind:member	line:48
+test_with_wrong_head_size	messenger/protocol_tests.py	/^	def test_with_wrong_head_size(self):$/;"	kind:member	line:13
+test_with_wrong_head_size	messenger/protocol_tests.py	/^	def test_with_wrong_head_size(self):$/;"	kind:member	line:44
+test_with_wrong_iden	messenger/protocol_tests.py	/^	def test_with_wrong_iden(self):$/;"	kind:member	line:21
+test_with_wrong_iden	messenger/protocol_tests.py	/^	def test_with_wrong_iden(self):$/;"	kind:member	line:52
+test_with_wrong_iden_size	messenger/protocol_tests.py	/^	def test_with_wrong_iden_size(self):$/;"	kind:member	line:25
+test_with_wrong_iden_size	messenger/protocol_tests.py	/^	def test_with_wrong_iden_size(self):$/;"	kind:member	line:60
+test_with_wrong_resl	messenger/protocol_tests.py	/^	def test_with_wrong_resl(self):$/;"	kind:member	line:56
+unittest	messenger/protocol_tests.py	/^import unittest$/;"	kind:namespace	line:3
+unpack_sign	messenger/protocol.py	/^	def unpack_sign(sign):$/;"	kind:member	line:29
+unpack_sign	messenger/protocol.py	/^	def unpack_sign(sign):$/;"	kind:member	line:89
+view.py	messenger/gui/view.py	1;"	kind:file	line:1

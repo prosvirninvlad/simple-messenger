@@ -61,6 +61,7 @@ class View(Gtk.Window):
 	def _make_message_entry(self):
 		self._message_entry = Gtk.Entry()
 		self._message_entry.connect("activate", self._send_clicked)
+		self._message_entry.connect("changed", self._message_entry_changed)
 		self._message_entry.set_placeholder_text("Type your message here. Press \"Enter\" to send message.")
 		self._controls_container.pack_start(self._message_entry, True, True, 0)
 
@@ -133,12 +134,17 @@ class View(Gtk.Window):
 	def _connection_config_clicked(self, sender):
 		self._config_menu.show_all()
 
-	def _push_message(self, message):
-		self._messages_view_buf.insert_at_cursor(message)
+	def _message_entry_changed(self, sender):
+		if self._message_entry.get_text_length():
+			self._controller.send_message_writing_begin()
+
+	def _push_message(self, author, message):
+		message_time = datetime.strftime(datetime.now(), "%H:%M:%S")
+		message_fmt = "{0} ({1}):\n{2}\n\n".format(author, message_time, message)
+		self._messages_view_buf.insert_at_cursor(message_fmt)
 
 	def _push_own_message(self, message):
-		message_fmt = "You:\n{0}\n\n".format(message)
-		self._push_message(message_fmt)
+		self._push_message("You", message)
 
 	def run_message_dialog(self, message):
 		message_dialog = Gtk.MessageDialog(
@@ -149,8 +155,7 @@ class View(Gtk.Window):
 		message_dialog.destroy()
 
 	def push_new_message(self, message):
-		message_fmt = "Companion:\n{0}\n\n".format(message)
-		self._push_message(message_fmt)
+		self._push_message("Companion", message)
 
 	def enable_connected_mode(self):
 		self.push_statusbar_message("Click \"Send\" to send message.")
