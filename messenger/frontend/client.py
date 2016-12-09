@@ -3,6 +3,7 @@ from socket import socket
 from select import select
 from threading import Thread
 
+from messenger.secure import *
 from messenger.protocol import Command
 from messenger.protocol import Response
 from messenger.frontend.exceptions import *
@@ -20,6 +21,9 @@ class Client:
 
 		self._message_writing = False
 		self._message_writing_time = self._epoch_time()
+
+		self._rsa = Rsa()
+		self._aes = Aes()
 
 	def connect(self, addr = DEFAULT_ADDRESS, port = DEFAULT_PORT):
 		if self._session_running:
@@ -92,7 +96,7 @@ class Client:
 		try:
 			response = self._receive_response()
 		except ServerDisconnected:
-			raise SuspendSession
+			raise SuspendConnection
 		response_processor = {
 			Command.CONN: self._process_conn_response,
 			Command.DSCN: self._process_dscn_response,
@@ -101,13 +105,18 @@ class Client:
 			Command.UNKN: self._process_unkn_response,
 			Command.ECHO: self._ignore_response,
 			Command.TYBE: self._process_tybe_response,
-			Command.TYEN: self._process_tyen_response
+			Command.TYEN: self._process_tyen_response,
+			Command.AESK: self._process_aesk_response
 		}.get(response.iden, self._process_unkn_response)
 		response_processor(response)
 
 	def _process_conn_response(self, response):
 		self._controller.process_conn_response(response)
-		if response.resl == Response.FAIL:
+		if response.resl == Response.OKAY:
+			message = self._rsa.export_pub_key()
+			command = Command(Command.AESK, message)
+			self._send_command(command)
+		else:
 			raise SuspendConnection
 
 	def _process_dscn_response(self, response):
@@ -115,6 +124,7 @@ class Client:
 		raise SuspendConnection
 
 	def _process_mesg_response(self, response):
+		response.mesg = self._aes.decode(response.mesg)
 		self._controller.process_mesg_response(response)
 
 	def _process_unkn_response(self, response):
@@ -126,15 +136,28 @@ class Client:
 	def _process_tyen_response(self, response):
 		self._controller.process_tyen_response(response)
 
+	def _process_aesk_response(self, response):
+		if response.resl == Response.OKAY:
+			message = self._rsa.decode(response.mesg)
+			self._aes.import_key(message)
+
 	def _ignore_response(self, response):
 		pass
+
+	def _send_message_writing_end(self):
+		delta = self._epoch_time() - self._message_writing_time
+		if delta > 1 and self._message_writing:
+			self._message_writing = False
+			command = Command(Command.TYEN)
+			self._send_command(command)
 
 	def echo(self, message):
 		command = Command(Command.ECHO, message.encode())
 		self._send_command(command)
 
 	def send_message(self, message):
-		command = Command(Command.SEND, message.encode())
+		message = self._aes.encode(message.encode())
+		command = Command(Command.SEND, message)
 		self._send_command(command)
 
 	def send_message_writing_begin(self):
@@ -144,13 +167,6 @@ class Client:
 			command = Command(Command.TYBE)
 			self._send_command(command)
 		self._message_writing_time = self._epoch_time()
-
-	def _send_message_writing_end(self):
-		delta = self._epoch_time() - self._message_writing_time
-		if delta > 1 and self._message_writing:
-			self._message_writing = False
-			command = Command(Command.TYEN)
-			self._send_command(command)
 
 	def suspend_session(self):
 		command = Command(Command.DSCN)

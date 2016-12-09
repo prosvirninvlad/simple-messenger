@@ -2,6 +2,7 @@ from socket import socket
 from select import select
 from threading import Thread
 
+from messenger.secure import *
 from messenger.protocol import Command
 from messenger.protocol import Response
 from messenger.backend.companion import Companion
@@ -106,6 +107,7 @@ def process_command(companion):
 		Command.ECHO: process_echo_command,
 		Command.TYBE: process_tybe_command,
 		Command.TYEN: process_tyen_command,
+		Command.AESK: process_aesk_command,
 		Command.UNKN: process_unkn_command
 	}.get(command.iden, process_unkn_command)
 	command_processor(companion, command)
@@ -126,9 +128,11 @@ def process_dscn_command(companion, command):
 	raise SuspendSession
 
 def process_send_command(companion, command):
+	message = companion.aes.decode(command.mesg)
+	message = companion.companion.aes.encode(message)
 	response = Response(Command.SEND)
 	companion.send_response(response)
-	response = Response(Command.MESG, mesg = command.mesg)
+	response = Response(Command.MESG, mesg = message)
 	companion.companion.send_response(response)
 
 def process_echo_command(companion, command):
@@ -142,6 +146,18 @@ def process_tybe_command(companion, command):
 def process_tyen_command(companion, command):
 	response = Response(Command.TYEN)
 	companion.companion.send_response(response)
+
+def process_aesk_command(companion, command):
+	response = None
+	if companion.aes:
+		response_message = b"AES_SECURE_ALREADY_ENABLED"
+		response = Response(Command.AESK, Response.FAIL, response_message)
+	else:
+		aes_handler = Aes()
+		companion.aes = aes_handler
+		response_message = Rsa.quick_encode(command.mesg, aes_handler.export_key())
+		response = Response(Command.AESK, mesg = response_message)
+	companion.send_response(response)
 
 def process_unkn_command(companion, command):
 	response_message = b"ERROR_UNKNOWN_COMMAND"

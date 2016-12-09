@@ -8,6 +8,12 @@ class Rsa:
 	def __init__(self):
 		self.gen_key()
 
+	@staticmethod
+	def quick_encode(pub_key, buf):
+		pub_key = RSA.importKey(pub_key)
+		buf, *_ = pub_key.encrypt(buf, None)
+		return buf
+
 	def gen_key(self):
 		self._prv_key = RSA.generate(Rsa.KEY_SIZE)
 		self._pub_key = self._prv_key.publickey()

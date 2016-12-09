@@ -1,5 +1,6 @@
 from select import select
 
+from messenger.secure import * 
 from messenger.protocol import Command
 from messenger.protocol import Response
 from messenger.backend.exceptions import *
@@ -16,7 +17,8 @@ class Companion:
 		)
 		return (comp for comp in companions if comp._sock in sock_r)
 
-	def __init__(self, sock, companion = None):
+	def __init__(self, sock, companion = None, aes = None):
+		self._aes = aes
 		self._sock = sock
 		self._companion = companion
 
@@ -62,3 +64,27 @@ class Companion:
 	@companion.setter
 	def companion(self, value):
 		self._companion = value
+
+	@property
+	def has_rsa_key(self):
+		return self._has_rsa_key
+
+	@has_rsa_key.setter
+	def has_rsa_key(self, value):
+		self._has_rsa_key = value
+
+	@property
+	def has_aes_key(self):
+		return self._has_aes_key
+
+	@has_aes_key.setter
+	def has_aes_key(self, value):
+		self._has_aes_key = value
+
+	@property
+	def aes(self):
+		return self._aes
+
+	@aes.setter
+	def aes(self, value):
+		self._aes = value

@@ -27,6 +27,7 @@ class Controller:
 	def process_mesg_response(self, response):
 		message = response.mesg.decode()
 		if response.resl == Response.OKAY:
+			message = message.rstrip("\x00")
 			self._view.lock(self._view.push_new_message, message)
 		else:
 			self._view.lock(self._view.run_message_dialog, message)

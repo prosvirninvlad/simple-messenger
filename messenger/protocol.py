@@ -7,9 +7,9 @@ class Command:
 	CONN = "CONN"
 	SEND = "SEND"
 	MESG = "MESG"
-	SECR = "SECR"
 	TYBE = "TYBE"
 	TYEN = "TYEN"
+	AESK = "AESK"
 
 	HEAD_SIZE = 3
 	IDEN_SIZE = 4
