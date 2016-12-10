@@ -97,14 +97,14 @@ class View(Gtk.Window):
 		server_addr.set_halign(Gtk.Align.START)
 		config_menu_container.pack_start(server_addr, False, True, 0)
 		self._server_addr_entry = Gtk.Entry()
-		self._server_addr_entry.set_text("127.0.0.1")
+		self._server_addr_entry.set_placeholder_text("127.0.0.1")
 		config_menu_container.pack_start(self._server_addr_entry, False, True, 0)
 
 		server_port = Gtk.Label("Port")
 		server_port.set_halign(Gtk.Align.START)
 		config_menu_container.pack_start(server_port, False, True, 0)
 		self._server_port_entry = Gtk.Entry()
-		self._server_port_entry.set_text("3848")
+		self._server_port_entry.set_placeholder_text("3848")
 		config_menu_container.pack_start(self._server_port_entry, False, True, 0)
 
 	def _make_statusbar(self):
